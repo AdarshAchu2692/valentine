@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gift 1 – Cute Quiz 💌</title>
+
+<style>
+body{
+  margin:0;
+  background:linear-gradient(135deg,#ffe6ea,#ffd1dc);
+  font-family:'Segoe UI', Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:30px;
+}
+
+.card{
+  background:white;
+  max-width:540px;
+  width:100%;
+  padding:35px;
+  border-radius:24px;
+  box-shadow:0 20px 45px rgba(200,80,120,0.25);
+  text-align:center;
+}
+
+.top{
+  font-size:14px;
+  color:#888;
+  margin-bottom:15px;
+}
+
+h2{
+  color:#e71f2f;
+  margin-bottom:18px;
+}
+
+.question{ display:none; }
+.question.active{ display:block; }
+
+.options button{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:12px;
+  font-size:15px;
+  border-radius:25px;
+  border:none;
+  cursor:pointer;
+  background:#ffe1e8;
+  transition:0.2s;
+}
+
+.options button:hover{
+  background:#ffc2d1;
+}
+
+.message{
+  margin-top:10px;
+  font-size:14px;
+  color:#e71f2f;
+  min-height:22px;
+}
+
+.final{
+  display:none;
+}
+
+.final h2{
+  color:#e71f2f;
+}
+
+.final p{
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* Back button */
+.back{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 26px;
+  background:#e71f2f;
+  color:white;
+  text-decoration:none;
+  border-radius:26px;
+  font-size:14px;
+  box-shadow:0 10px 28px rgba(231,60,60,0.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="top">Me = <b>Shaluttan</b> 😎 | You = <b>Achu</b> 🥰</div>
+
+  <!-- Q1 -->
+  <div class="question active">
+    <h2>Do you love me? 😌</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Too little 😏 try again')">Yes 😍</button>
+      <button onclick="correct(this)">Of course 😘</button>
+      <button onclick="wrong(this,'Angane paranjudaa 😭')">No</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question">
+    <h2>Who is the absolute BOSS in this relationship? 👑</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Confidence level 💯 but wrong 😎')">Me</button>
+      <button onclick="correct(this)">You</button>
+      <button onclick="wrong(this,'Amma boss to Achan 😂')">My mom</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question">
+    <h2>Who fights a lot in this relationship? 🤭</h2>
+    <div class="options">
+      <button onclick="correct(this)">Me</button>
+      <button onclick="wrong(this,'Nice acting 😇')">You</button>
+      <button onclick="wrong(this,'Both know this is fake 😜')">No one</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question">
+    <h2>Where do you plan to spend the rest of your life? 💭</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Ath mathiyo 😝')">Paris</button>
+      <button onclick="correct(this)">In your heart ❤️</button>
+      <button onclick="wrong(this,'Too far madam, nale pokam 🚀')">On Mars</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question">
+    <h2>Will you be my Valentine forever? ❤️</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Forever means MORE 😌')">Yes 😍</button>
+      <button onclick="correct(this)">Of course 😘</button>
+      <button onclick="wrong(this,'Ath ninte mattavanod poi para 💔')">Never</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question">
+    <h2>On a scale of 1–10, how annoying am I? 😜</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Too low 😏 be honest')">5</button>
+      <button onclick="wrong(this,'Pavam njan 😆')">10</button>
+      <button onclick="correct(this)">0</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="question">
+    <h2>What is Achu's favorite food? 🍽️</h2>
+    <div class="options">
+      <button onclick="wrong(this,'Good but not best 😋')">Biriyani</button>
+      <button onclick="correct(this)">Me ❤️</button>
+      <button onclick="wrong(this,'Chelarde athrem pora 😅')">Porotta beef</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="question">
+    <h2>If we fight, who fixes it faster? 🥺</h2>
+    <div class="options">
+      <button onclick="wrong(this,'I know you 😌')">Me</button>
+      <button onclick="wrong(this,'Onnude 😆')">You</button>
+      <button onclick="correct(this)">Always you</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="question">
+    <h2>First who blocks on social media & phone? 📱</h2>
+    <div class="options">
+      <button onclick="wrong(this,'I wish 😜')">You</button>
+      <button onclick="wrong(this,'Aduth ethi 😇')">Me</button>
+      <button onclick="correct(this)">Always me</button>
+    </div>
+    <div class="message"></div>
+  </div>
+
+  <!-- FINAL -->
+  <div class="final">
+    <h2>Perfect score 😍🎉</h2>
+    <p>
+      You answered everything correctly 🥹❤️<br><br>
+      I already knew all the answers…  
+      because you know me better than anyone 💍💞
+    </p>
+  </div>
+
+  <!-- Back button -->
+  <a class="back" href="gifts.html">🎁 Back to other gifts</a>
+
+</div>
+
+<script>
+function correct(btn){
+  const q = btn.closest(".question");
+  q.querySelector(".message").innerHTML = "Correct 😍 I knew it!";
+  
+  setTimeout(()=>{
+    q.classList.remove("active");
+    const next = q.nextElementSibling;
+    if(next && next.classList.contains("question")){
+      next.classList.add("active");
+    } else {
+      document.querySelector(".final").style.display="block";
+    }
+  },800);
+}
+
+function wrong(btn,msg){
+  const q = btn.closest(".question");
+  q.querySelector(".message").innerHTML = msg;
+}
+</script>
+
+</body>
+</html>

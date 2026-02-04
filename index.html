@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  font-family:'Segoe UI', Arial, sans-serif;
+}
+
+.box{
+  background:white;
+  padding:50px 45px;
+  border-radius:25px;
+  text-align:center;
+  position:relative;
+  width:440px;
+  box-shadow:0 0 30px rgba(255,75,92,0.35);
+}
+
+video{
+  width:140px;
+  margin:0 auto 15px;
+  display:block;
+  border-radius:16px;
+}
+
+h1{
+  color:#ff4b5c;
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:17px;
+  margin:12px;
+  cursor:pointer;
+}
+
+#yes{
+  background:#ff4b5c;
+  color:white;
+}
+
+#no{
+  background:#eee;
+  position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <!-- Cute animation -->
+  <video autoplay loop muted playsinline>
+    <source src="1.mp4" type="video/mp4">
+  </video>
+
+  <h1>Shalutta 💕<br>Will you be my Valentine?</h1>
+
+  <button id="yes" onclick="location.href='yes.html'">Yes 😍</button>
+  <button id="no">No 🙄</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const box = document.querySelector(".box");
+
+noBtn.addEventListener("mouseover", () => {
+  const maxX = box.clientWidth - noBtn.offsetWidth - 10;
+  const maxY = box.clientHeight - noBtn.offsetHeight - 10;
+
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top  = Math.random() * maxY + "px";
+});
+</script>
+
+</body>
+</html>

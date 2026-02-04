@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>An Old Love Letter 💌</title>
+
+<style>
+/* Page background */
+body{
+  background:#2e1c0f;
+  padding:60px 20px;
+  font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+}
+
+/* Aged paper */
+.box{
+  max-width:540px;
+  margin:auto;
+  padding:50px 45px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0)),
+    #e6cfa3;
+  border-radius:6px;
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.6),
+    inset 0 0 60px rgba(120,80,40,0.35);
+  position:relative;
+}
+
+/* Paper stains */
+.box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(120,80,40,0.18), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(120,80,40,0.15), transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(90,60,30,0.12), transparent 55%);
+  pointer-events:none;
+}
+
+/* Slight paper rough edge illusion */
+.box::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border:2px solid rgba(120,80,40,0.35);
+  filter:blur(3px);
+  pointer-events:none;
+}
+
+/* Title */
+h2{
+  font-family:'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-size:36px;
+  color:#5a2c1b;
+  text-align:center;
+  margin-bottom:25px;
+}
+
+/* Divider */
+.divider{
+  text-align:center;
+  font-size:22px;
+  color:#7a4a2e;
+  margin-bottom:30px;
+}
+
+/* Video */
+video{
+  width:120px;
+  display:block;
+  margin:0 auto 30px;
+  border-radius:8px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.35);
+}
+
+/* Letter text */
+p{
+  color:#3a2416;
+  font-size:17px;
+  line-height:1.9;
+  text-align:left;
+}
+
+/* Signature */
+.signature{
+  margin-top:40px;
+  font-family:'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-size:26px;
+  color:#5a2c1b;
+  text-align:right;
+}
+
+/* Button */
+a{
+  display:inline-block;
+  margin-top:35px;
+  padding:10px 24px;
+  background:#5a2c1b;
+  color:#f7e6c7;
+  text-decoration:none;
+  border-radius:20px;
+  font-size:14px;
+}
+a:hover{
+  background:#3f1e12;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>My Beloved</h2>
+  <div class="divider">❦ ❦ ❦</div>
+
+  <video autoplay loop muted playsinline>
+    <source src="4.mp4" type="video/mp4">
+  </video>
+
+  <p>
+    My Dearest Love,<br><br>
+
+    I write these words as though pressing my heart onto this paper,
+    hoping the ink might carry even a fraction of what I feel for you.
+    From the day you entered my life, everything found its meaning.<br><br>
+
+    Even when we argue, even when silence lingers between us,
+    my love never fades.  
+    Nammal adi idum, mindathe irikkum,
+    enth paranjaalum — my heart chooses you, always.<br><br>
+
+    Enikku nee illathe pattilla.
+    You are my one and only, the quiet strength behind my smiles,
+    the warmth I return to every time.<br><br>
+
+    I promise to grow kinder, stronger, and better —
+    to love you sincerely, faithfully, and without end.
+  </p>
+
+  <div class="signature">
+    Forever Yours,<br>
+    ❤️
+  </div>
+
+  <a href="gifts.html">Return to the gifts 🎁</a>
+
+</div>
+
+</body>
+</html>

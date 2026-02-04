@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gift 3 — Look at this cutiee 😍</title>
+
+<style>
+:root{
+  --accent:#e7403d;
+  --muted:#6b4a4f;
+}
+
+html,body{
+  margin:0;
+  background:#f7e8e8;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+.wrap{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.card{
+  background:linear-gradient(180deg,#ffdfe6,#ffd2de);
+  width:min(1000px,96%);
+  border-radius:20px;
+  padding:32px;
+  box-shadow:0 18px 40px rgba(220,100,130,0.15);
+}
+
+/* Top video */
+.top-video{
+  width:160px;
+  margin:0 auto 15px;
+  display:block;
+  border-radius:16px;
+}
+
+/* Title */
+.title{
+  text-align:center;
+  margin-bottom:22px;
+}
+.title h1{
+  margin:0;
+  font-size:34px;
+  color:#7a1a28;
+}
+.title p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.polaroid{
+  background:#f8f0ea;
+  padding:12px 12px 18px;
+  border-radius:8px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:transform .25s, box-shadow .25s;
+}
+
+.polaroid:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 28px 48px rgba(0,0,0,0.15);
+}
+
+.polaroid:nth-child(1){transform:rotate(-4deg);}
+.polaroid:nth-child(2){transform:rotate(2deg);}
+.polaroid:nth-child(3){transform:rotate(-2deg);}
+.polaroid:nth-child(4){transform:rotate(3deg);}
+.polaroid:nth-child(5){transform:rotate(-1deg);}
+.polaroid:nth-child(6){transform:rotate(1deg);}
+
+.frame{
+  background:white;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  padding-bottom:66%;
+}
+
+.frame img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.caption{
+  margin-top:12px;
+  text-align:center;
+  font-family:"Courier New", serif;
+  font-size:15px;
+  color:#5a2f34;
+}
+
+.caption small{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* Back button */
+.center{
+  text-align:center;
+  margin-top:24px;
+}
+.btn{
+  padding:12px 28px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:28px;
+  font-weight:600;
+}
+
+/* Modal */
+.overlay{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.55);
+  z-index:9999;
+}
+.overlay.open{display:flex;}
+
+.modal{
+  background:white;
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  overflow:hidden;
+}
+.modal img{
+  width:100%;
+  max-height:80vh;
+  object-fit:contain;
+}
+.modal .meta{
+  padding:10px;
+  text-align:center;
+}
+
+.close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:white;
+  padding:6px 10px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr;}
+  .title h1{font-size:22px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+  <div class="card">
+
+    <!-- 🔥 Top animation -->
+    <video class="top-video" autoplay loop muted playsinline>
+      <source src="7.mp4" type="video/mp4">
+    </video>
+
+    <div class="title">
+      <h1>Look at this cutiee 😭</h1>
+      <p>Memories we made together 💕</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="polaroid" data-src="photo1.jpg" data-caption="Sweet Hello">
+        <div class="frame"><img src="photo1.jpg"></div>
+        <div class="caption">Sweet Hello <small>the day we met</small></div>
+      </div>
+
+      <div class="polaroid" data-src="photo2.jpg" data-caption="True Smile">
+        <div class="frame"><img src="photo2.jpg"></div>
+        <div class="caption">True Smile <small>your real laugh</small></div>
+      </div>
+
+      <div class="polaroid" data-src="photo3.jpg" data-caption="Perfect Day">
+        <div class="frame"><img src="photo3.jpg"></div>
+        <div class="caption">Perfect Day <small>that moment</small></div>
+      </div>
+
+      <div class="polaroid" data-src="photo4.jpg" data-caption="Only Us">
+        <div class="frame"><img src="photo4.jpg"></div>
+        <div class="caption">Only Us <small>just us</small></div>
+      </div>
+
+      <div class="polaroid" data-src="photo5.jpg" data-caption="My Home">
+        <div class="frame"><img src="photo5.jpg"></div>
+        <div class="caption">My Home <small>with you</small></div>
+      </div>
+
+      <div class="polaroid" data-src="photo6.jpg" data-caption="Forever Us">
+        <div class="frame"><img src="photo6.jpg"></div>
+        <div class="caption">Forever Us <small>always</small></div>
+      </div>
+
+    </div>
+
+    <div class="center">
+      <a class="btn" href="gifts.html">🎁 Back to gifts</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="overlay" class="overlay">
+  <div class="modal">
+    <span class="close" id="close">✕</span>
+    <img id="modalImg">
+    <div class="meta" id="modalCap"></div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.polaroid').forEach(p=>{
+  p.onclick=()=>{
+    document.getElementById('modalImg').src=p.dataset.src;
+    document.getElementById('modalCap').innerText=p.dataset.caption;
+    document.getElementById('overlay').classList.add('open');
+  };
+});
+document.getElementById('close').onclick=()=>{
+  document.getElementById('overlay').classList.remove('open');
+};
+document.getElementById('overlay').onclick=e=>{
+  if(e.target.id==='overlay'){
+    e.target.classList.remove('open');
+  }
+};
+</script>
+
+</body>
+</html>
